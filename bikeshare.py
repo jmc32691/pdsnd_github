@@ -57,7 +57,7 @@ def get_filters():
     return city, month, day
 
 
-
+# Load data file into dataframe, clean up date formatting, and prepare dataframes for individual months and weekdays
 
 def load_data(city, month, day):
     """
@@ -99,7 +99,7 @@ def load_data(city, month, day):
     return df
 
 
-
+# Display time-related statistics for the filters selected
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -127,6 +127,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+# Display station-related statistics for the filters selected
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -155,6 +156,7 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+# Display trip duration-related statistics for the filters selected
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -180,6 +182,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+# Display user-related statistics for the filters selected
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -217,6 +220,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+# Allows the user to see raw data if desired; if not, they are given the option to restart
 
 def main():
     while True:
