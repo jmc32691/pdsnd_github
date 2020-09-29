@@ -108,20 +108,20 @@ def time_stats(df):
     start_time = time.time()
 
     # display the most common month
-    popular_month = df['month'].mode()[0]
+    pop_month = df['month'].mode()[0]
     print()
-    print('Most Frequent Start Month:', popular_month)
+    print('Most Frequent Start Month:', pop_month)
 
 
     # display the most common day of week
-    popular_dow = df['day_of_week'].mode()[0]
+    pop_dow = df['day_of_week'].mode()[0]
     print()
-    print('Most Frequent Start Day of Week:', popular_dow)
+    print('Most Frequent Start Day of Week:', pop_dow)
 
     # display the most common start hour
-    popular_hour = df['hour'].mode()[0]
+    pop_hour = df['hour'].mode()[0]
     print()
-    print('Most Frequent Start Hour:', popular_hour)
+    print('Most Frequent Start Hour:', pop_hour)
     print()
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -136,20 +136,20 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    popular_start = df['Start Station'].mode()[0]
+    pop_start = df['Start Station'].mode()[0]
     print()
-    print('Most Frequent Start Station:', popular_start)
+    print('Most Frequent Start Station:', pop_start)
 
     # display most commonly used end station
-    popular_end = df['End Station'].mode()[0]
+    pop_end = df['End Station'].mode()[0]
     print()
-    print('Most Frequent End Station:', popular_end)
+    print('Most Frequent End Station:', pop_end)
 
     # display most frequent combination of start station and end station trip
     df['Station Combo'] = df['Start Station'].str.cat(df['End Station'], sep =" + ")
-    popular_combo = df['Station Combo'].mode()[0]
+    pop_combo = df['Station Combo'].mode()[0]
     print()
-    print('Most Frequent Combo of Start Station and End Station trip: ', popular_combo)
+    print('Most Frequent Combo of Start Station and End Station trip: ', pop_combo)
     print()
 
 
@@ -207,11 +207,11 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
-        earliest_year = int(df['Birth Year'].min())
-        recent_year = int(df['Birth Year'].max())
-        common_year = int(df['Birth Year'].mode()[0])
+        earliest_yr = int(df['Birth Year'].min())
+        recent_yr = int(df['Birth Year'].max())
+        common_yr = int(df['Birth Year'].mode()[0])
         print()
-        print('Birth Year Counts: The earliest birth year is {}. \n - The most recent birth year is {}. \n - The most common year of birth is {}.'.format(earliest_year, recent_year, common_year))
+        print('Birth Year Counts: The earliest birth year is {}. \n - The most recent birth year is {}. \n - The most common year of birth is {}.'.format(earliest_yr, recent_yr, common_yr))
         print()
     else:
         print()
