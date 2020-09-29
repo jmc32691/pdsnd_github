@@ -124,7 +124,7 @@ def time_stats(df):
     print('Most Frequent Start Hour:', pop_hour)
     print()
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 5))
     print('-'*40)
 
 # Display station-related statistics for the filters selected
@@ -153,7 +153,7 @@ def station_stats(df):
     print()
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 5))
     print('-'*40)
 
 # Display trip duration-related statistics for the filters selected
@@ -166,20 +166,20 @@ def trip_duration_stats(df):
 
     # display total travel time
     total_duration = df['Trip Duration'].sum()
-    total_duration_min = (total_duration / 60).round(2)
+    total_duration_min = round(total_duration / 60, 2)
     print()
     print('Total Travel Time: {} minutes'.format(f"{total_duration_min:,}"))
 
 
     # display mean travel time
     mean_duration = df['Trip Duration'].mean()
-    mean_duration_min = (mean_duration / 60).round(2)
+    mean_duration_min = round(mean_duration / 60, 2)
     print()
     print('Average Travel Time: {} minutes'.format(mean_duration_min))
     print()
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 5))
     print('-'*40)
 
 # Display user-related statistics for the filters selected
@@ -217,7 +217,7 @@ def user_stats(df):
         print()
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round(time.time() - start_time, 5))
     print('-'*40)
 
 # Allows the user to see raw data if desired; if not, they are given the option to restart
